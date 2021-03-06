@@ -282,7 +282,7 @@ class _SavingsState extends State<Savings> {
 }
 
 Future<List<DepositClass>> fetchSavings() async {
-  Response response = await http.get('http://192.168.1.7:4000/savings');
+  Response response = await http.get('http://192.168.1.12:4000/savings');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed

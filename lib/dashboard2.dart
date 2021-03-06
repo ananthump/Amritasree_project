@@ -257,7 +257,7 @@ class _OverallLoanDetailState extends State<OverallLoanDetail> {
 
 Future<List<DepositClass>> fetchDepositDetails() async {
   Response response =
-      await http.get('http://192.168.1.7:4000/depositDetails');
+      await http.get('http://192.168.1.12:4000/depositDetails');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed
@@ -266,7 +266,7 @@ Future<List<DepositClass>> fetchDepositDetails() async {
 }
 
 Future<List<LoanDetailsClass>> fetchLoanDetails() async {
-  Response response = await http.get('http://192.168.1.7:4000/loanAmount');
+  Response response = await http.get('http://192.168.1.12:4000/loanAmount');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed

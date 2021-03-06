@@ -38,7 +38,7 @@ static List<String> s=[""];
   Future<String> getGroups()async{
     print(dataJson.isEmpty);
 
-    String url = "http://10.0.2.2:4000/ATGget";
+    String url = "http://192.168.1.12:4000/ATGget";
     print(url);
 
     Response response = await http.get(url,headers: {"Accept":"application/json"});

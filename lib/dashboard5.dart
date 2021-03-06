@@ -218,7 +218,7 @@ class _PaymentAlertState extends State<PaymentAlert> {
 }
 
 Future<List<DepositClass>> fetchPaymentAlert() async {
-  Response response = await http.get('http://192.168.1.7:4000/paymentAlert');
+  Response response = await http.get('http://192.168.1.12:4000/paymentAlert');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed

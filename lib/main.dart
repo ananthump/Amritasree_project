@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:amritasreeproject/SelectOption1.dart';
+import 'package:amritasreeproject/SelectOption2.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:flutter/material.dart';
@@ -135,7 +137,7 @@ class _DetailListState extends State<DetailList> {
                               if (Details[i].Password ==
                                   passwordController.text) {
 
-                                var url = "http://192.168.1.7:4000/getMemberID";
+                                var url = "http://192.168.1.12:4000/getMemberID";
                                 print(Details[i].MemberID);
                                 http.post(url, body: {
                                   "MemberID": Details[i].MemberID.toString(),
@@ -146,7 +148,7 @@ class _DetailListState extends State<DetailList> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (BuildContext context) =>
-                                              SelectOption(
+                                              SelectOption2(
                                                   MemberID: Details[i].MemberID, GroupID: Details[i].GroupID)));
                                 else
                                   Navigator.push(
@@ -178,7 +180,7 @@ class _DetailListState extends State<DetailList> {
 }
 
 Future<List<MemberDetailsClass>> fetchMembersDetails() async {
-  Response response = await http.get('http://192.168.1.7:4000/');
+  Response response = await http.get('http://192.168.1.12:4000/');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed
