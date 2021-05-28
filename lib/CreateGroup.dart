@@ -51,7 +51,7 @@ class GrpRegister extends State<GrpRegistration> {
   ];
   String cluster="0";
   Future register() async{
-    String url = "http://10.0.2.2:4000/grpreg";
+    String url = "http://192.168.1.10:4000/grpreg";
     Map<String,String> body = {
       "GroupID":gid.text,
       "GroupName":gname.text,

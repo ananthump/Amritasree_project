@@ -627,7 +627,7 @@ class Register extends State<Registration> {
     String Password = _passwordController.text;
     String Answer = _AnswerController.text;
 
-    var url = "http://192.168.1.7:4000/register";
+    var url = "http://192.168.1.10:4000/register";
 
     http.post(url, body: {
       "MemberName": MemberName,

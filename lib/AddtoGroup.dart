@@ -32,7 +32,7 @@ class _ATG extends State<ATG> {
   Future<String> getGroups()async{
     print(dataJson.isEmpty);
 
-    String url = "http://10.0.2.2:4000/ATGget";
+    String url = "http://192.168.1.10:4000/ATGget";
     print(url);
 
     Response response = await http.get(url,headers: {"Accept":"application/json"});
@@ -66,7 +66,7 @@ class _ATG extends State<ATG> {
 
 
   Future add(String num) async {
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/atg/"+num;
     final url= Uri.http(uri,path);
 
@@ -114,7 +114,7 @@ class _ATG extends State<ATG> {
     );
   }
   Future<String> getlogin(String phno)async{
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/number/get/"+phno;
     final url= Uri.http(uri,path);
     print(url);
@@ -182,8 +182,11 @@ class _ATG extends State<ATG> {
                 ),
                 SizedBox(height:8.0,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid, items:_groupid
                       .map((value) =>

@@ -141,7 +141,7 @@ class _DetailListState extends State<DetailList> {
 }
 
 Future<List<MemberDetailsClass>> fetchMembersDetails() async {
-  Response response = await http.get('http://192.168.1.12:4000/');
+  Response response = await http.get('http://192.168.1.10:4000/');
   print(response.body);
   final parsed = json.decode(response.body);
   return parsed.map<MemberDetailsClass>((json) => MemberDetailsClass.fromJson(json)).toList();

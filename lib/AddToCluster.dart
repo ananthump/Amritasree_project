@@ -44,7 +44,7 @@ class _ATC extends State<ATC> {
   Future<String> getGroups(String district)async{
     print(dataJson.isEmpty);
 
-    String url = "http://10.0.2.2:4000/ATGget";
+    String url = "http://192.168.1.10:4000/ATGget";
     print(url);
 
     Response response = await http.get(url,headers: {"Accept":"application/json"});
@@ -104,7 +104,7 @@ class _ATC extends State<ATC> {
    Future<String> getClusters(String district)async{
     print(dataJson1.isEmpty);
     s1=[""];
-    String url = "http://10.0.2.2:4000/getcluster/"+district;
+    String url = "http://192.168.1.10:4000/getcluster/"+district;
     print(url);
 
     Response response = await http.get(url,headers: {"Accept":"application/json"});
@@ -129,7 +129,7 @@ class _ATC extends State<ATC> {
   }
   
 Future add(String groupid) async {
-  final uri = "10.0.2.2:4000";
+  final uri = "192.168.1.10:4000";
   final path = "/cr/" + groupid;
   final url = Uri.http(uri, path);
 
@@ -267,10 +267,14 @@ Future add(String groupid) async {
                         }),
                   ),
                 ),
-
+                SizedBox(height: 7,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid1, items:_groupid
                       .map((value) =>
@@ -285,9 +289,14 @@ Future add(String groupid) async {
                     hint: Text('Select the first group'),
                   ),
                 ),
+                SizedBox(height: 7,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid2, items:_groupid
                       .map((value) =>
@@ -302,9 +311,14 @@ Future add(String groupid) async {
                     hint: Text('Select the second group'),
                   ),
                 ),
+                SizedBox(height: 7,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid3, items:_groupid
                       .map((value) =>
@@ -319,9 +333,14 @@ Future add(String groupid) async {
                     hint: Text('Select the third group'),
                   ),
                 ),
+                SizedBox(height: 7,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid4, items:_groupid
                       .map((value) =>
@@ -336,9 +355,14 @@ Future add(String groupid) async {
                     hint: Text('Select the fourth group'),
                   ),
                 ),
+                SizedBox(height: 7,),
                 Container(
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
                   ),
                   child: DropdownButton(value: groupid5, items:_groupid
                       .map((value) =>

@@ -72,7 +72,7 @@ class _SelectOption2State extends State<SelectOption2> {
     await flutterTts.setVolume(volume);
     await flutterTts.setSpeechRate(rate);
     await flutterTts.setPitch(pitch);
-    // print(await flutterTts.getLanguages);
+    print(await flutterTts.getLanguages);
     flutterTts.setLanguage("ml-IN");
     // print("check");
     if (word != null) {

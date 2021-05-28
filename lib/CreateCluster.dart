@@ -38,7 +38,7 @@ static List<String> s=[""];
   Future<String> getGroups()async{
     print(dataJson.isEmpty);
 
-    String url = "http://192.168.1.12:4000/ATGget";
+    String url = "http://192.168.1.10:4000/ATGget";
     print(url);
 
     Response response = await http.get(url,headers: {"Accept":"application/json"});
@@ -101,7 +101,7 @@ static List<String> s=[""];
 
 
   Future addCluster() async {
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/cr";
     final url= Uri.http(uri,path);
 
@@ -125,7 +125,7 @@ static List<String> s=[""];
   }
 
   Future getClusterid(String clustername) async {
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/getclusterid/"+clustername;
     final url= Uri.http(uri,path);
 
@@ -138,7 +138,7 @@ static List<String> s=[""];
   }
 
   Future add(String groupid) async {
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/cr/"+groupid;
     final url= Uri.http(uri,path);
 
@@ -201,7 +201,7 @@ static List<String> s=[""];
   }
 
   Future<String> getClusterID(String groupid)async{
-    final uri = "10.0.2.2:4000";
+    final uri = "192.168.1.10:4000";
     final path = "/cr/"+groupid;
     final url= Uri.http(uri,path);
     print(url);
@@ -319,10 +319,15 @@ static List<String> s=[""];
                       block.isEmpty?'Please enter the block!':null;
                     },),
                 ),
+                SizedBox(height: 7,),
                 Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                  height: MediaQuery.of(context).size.height * 0.043,
+                  width: MediaQuery.of(context).size.height * 0.3,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      color: Colors.white,
+                      border: Border.all()
+                  ),
                 child: DropdownButton(value: groupid1, items:_groupid
                     .map((value) =>
                     DropdownMenuItem(
@@ -341,9 +346,14 @@ static List<String> s=[""];
                   hint: Text('Select the first group'),
                 ),
               ),
+                SizedBox(height: 7,),
               Container(
+                height: MediaQuery.of(context).size.height * 0.043,
+                width: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0)
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.white,
+                    border: Border.all()
                 ),
                 child: DropdownButton(value: groupid2, items:_groupid
                     .map((value) =>
@@ -363,9 +373,14 @@ static List<String> s=[""];
                   hint: Text('Select the second group'),
                 ),
               ),
+                SizedBox(height: 7,),
               Container(
+                height: MediaQuery.of(context).size.height * 0.043,
+                width: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0)
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.white,
+                    border: Border.all()
                 ),
                 child: DropdownButton(value: groupid3, items:_groupid
                     .map((value) =>
@@ -385,9 +400,14 @@ static List<String> s=[""];
                   hint: Text('Select the third group'),
                 ),
               ),
+                SizedBox(height: 7,),
               Container(
+                height: MediaQuery.of(context).size.height * 0.043,
+                width: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0)
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.white,
+                    border: Border.all()
                 ),
                 child: DropdownButton(value: groupid4, items:_groupid
                     .map((value) =>
@@ -407,9 +427,14 @@ static List<String> s=[""];
                   hint: Text('Select the fourth group'),
                 ),
               ),
+                SizedBox(height: 7,),
               Container(
+                height: MediaQuery.of(context).size.height * 0.043,
+                width: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0)
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: Colors.white,
+                    border: Border.all()
                 ),
                 child: DropdownButton(value: groupid5, items:_groupid
                     .map((value) =>
